@@ -32,8 +32,8 @@ char **strtow(char *str)
 	for (c = height = 0 ; str[c] != '\0' ; c++)
 		if (str[c] != ' ' && (str[c + 1] == ' ' || str[c + 1] == '\0'))
 			height++;
-	output = malloc(sizeof(char *) * (height = 1));
-	if (output == NULL)
+	output = malloc((height + 1) * sizeof(char *));
+	if (output == NULL || height == 0)
 	{
 		free(output);
 		return (NULL);
