@@ -12,7 +12,8 @@
 int main(int argc, char *argv[])
 {
 	int i, b;
-	char *arr;
+	int (*address)(int, char **) =  main;
+	unsigned char output;
 
 	if (argc != 2)
 	{
@@ -28,16 +29,16 @@ int main(int argc, char *argv[])
 		exit(2);
 	}
 
-	arr = (char *) main;
-
 	for (i = 0 ; i < b ; i++)
 	{
+		output =  *(unsigned char *)address;
+		printf("%.2x", output);
+
 		if (i == b - 1)
-		{
-			printf("%02hhx\n", arr[i]);
-			break;
-		}
-		printf("%02hhx\n", arr[i]);
+			continue;
+		printf(" ");
+		address++;
 	}
+	printf("\n");
 	return (0);
 }
