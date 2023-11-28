@@ -273,7 +273,7 @@ void print_type(unsigned int e_type, unsigned char *e_ident)
 
 /**
  * print_entry - prints entry
- * @e_ntry:entry point
+ * @e_entry:entry point
  * @e_ident: pointer to array
  */
 
