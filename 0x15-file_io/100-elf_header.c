@@ -273,14 +273,14 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 {
 	Elf64_Ehdr *header;
 	int i, j;
-	
+
 	i = open(argv[1], O_RDONLY);
 	if (i == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read file%s\n", argv[1]);
 		exit(98);
 	}
-	
+
 	header = malloc(sizeof(Elf64_Ehdr));
 	if (header == NULL)
 	{
@@ -309,6 +309,6 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 	print_entry(header->e_entry, header->e_ident);
 
 	free(header);
-        end_elf(i);
-        return (0);
+	end_elf(i);
+	return (0);
 }
