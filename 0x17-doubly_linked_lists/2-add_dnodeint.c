@@ -4,7 +4,7 @@
  * add_dnodeint - function that adds a new node at the beginning of a list
  * @head: head of list
  * @n: value of element
- * Return address of element
+ * Return: address of element
  */
 
 dlistint_t *add_dnodeint(dlistint_t **head, const int n)
